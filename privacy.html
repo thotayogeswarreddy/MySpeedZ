@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Drivile</title>
+    <title>Drivile - Privacy Policy</title>
     <style>
         * {
             margin: 0;
@@ -11,391 +11,527 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-black: #000000;
+            --pure-white: #ffffff;
+            --accent-green: #00ff88;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --text-gray: #666666;
+            --gradient-primary: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--primary-black);
+            background: var(--pure-white);
             min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            color: var(--pure-white);
+            margin-bottom: 40px;
+            background: var(--gradient-primary);
+            padding: 40px 20px;
+            border-radius: 20px;
         }
 
-        .logo {
+        .header h1 {
             font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .tagline {
+        .header p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--primary-black);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 8px;
+        }
+
+        .section h3 {
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: #f0fff7;
+            border: 1px solid #c7ffe6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: #fff0f0;
+            border: 1px solid #ffd6d6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success-box {
+            background: #f0fff7;
+            border: 1px solid #c7ffe6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
         }
 
         .back-link {
-            display: inline-block;
-            color: white;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            color: var(--primary-black);
             text-decoration: none;
-            margin-bottom: 2rem;
+            font-weight: 600;
             padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--primary-black);
             border-radius: 25px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .back-link:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .back-link a:hover {
+            background: var(--primary-black);
+            color: var(--pure-white);
         }
 
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 2rem;
-        }
-
-        .content-card h1 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
+        .last-updated {
             text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
-        .content-card h2 {
-            color: #333;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
+        .data-category {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--accent-green);
         }
 
-        .content-card h3 {
-            color: #555;
-            margin: 1.5rem 0 0.5rem 0;
-        }
+        /* Scenarios table (for Location section) */
+        .scenarios-wrapper { overflow-x: auto; margin: 12px 0; }
+        table.scenarios { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--pure-white); border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); }
+        .scenarios th, .scenarios td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); white-space: nowrap; }
+        .scenarios th { background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(26,26,26,0.85)); color: var(--pure-white); font-weight: 700; }
+        .scenarios tr:last-child td { border-bottom: none; }
+        .badge-on { color: var(--primary-black); background: var(--accent-green); padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
+        .badge-off { color: #fff; background: #111; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
 
-        .content-card p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .content-card ul {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        .content-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight {
-            background: #f0f8ff;
-            padding: 1rem;
-            border-left: 4px solid #667eea;
-            margin: 1rem 0;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 3rem;
-            padding: 2rem 0;
-        }
-
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 0.8;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Drivile</div>
-            <div class="tagline">Your DRIVing profILE</div>
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="APP_LOGO.png" alt="Drivile Logo" style="height:56px; width:auto; margin-bottom:12px; border-radius:12px;">
+            <h1>Drivile</h1>
+            <p>Privacy Policy</p>
         </div>
 
-        <div class="content-card">
-            <h1>Privacy Policy</h1>
-            
-            <p><strong>Last updated: August 2025</strong></p>
-            
-            <p>At Drivile, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and related services.</p>
-
-            <div class="highlight">
-                <strong>Your Privacy Matters:</strong> We believe in transparency and giving you full control over your data. This policy explains exactly what information we collect, why we need it, and how you can control it.
+        <div class="content">
+            <div class="last-updated">
+                Last Updated: August 21, 2025
             </div>
 
-            <h2>1. Information We Collect</h2>
-            
-            <h3>1.1 Personal Information</h3>
-            <p>When you create an account and use Drivile, we collect the following personal information:</p>
-            <ul>
-                <li><strong>Account Information:</strong> Email address, first name, last name, and profile picture</li>
-                <li><strong>Profile Details:</strong> Date of birth, gender, address, phone number, and vehicle information</li>
-                <li><strong>Preferences:</strong> App settings, notification preferences, and privacy choices</li>
-            </ul>
-
-            <h3>1.2 Location and Motion Data</h3>
-            <p>To provide our core driving analytics services, we collect:</p>
-            <ul>
-                <li><strong>GPS Coordinates:</strong> Real-time location data during trips for route tracking and safety monitoring</li>
-                <li><strong>Motion Data:</strong> Device movement patterns to detect driving behavior and trip start/stop</li>
-                <li><strong>Trip Information:</strong> Start/end locations, route details, and driving duration</li>
-            </ul>
-
-            <h3>1.3 Driving Behavior Data</h3>
-            <p>We collect information about your driving patterns to provide safety insights:</p>
-            <ul>
-                <li><strong>Speed Data:</strong> Vehicle speed and speed limit compliance</li>
-                <li><strong>Safety Metrics:</strong> Stop sign compliance, harsh braking, and acceleration patterns</li>
-                <li><strong>Performance Analytics:</strong> Driving scores, violation counts, and improvement trends</li>
-            </ul>
-
-            <h3>1.4 Usage and Analytics Data</h3>
-            <p>To improve our services, we collect:</p>
-            <ul>
-                <li><strong>App Usage:</strong> Features used, time spent in app, and interaction patterns</li>
-                <li><strong>Performance Data:</strong> App crashes, error logs, and technical diagnostics</li>
-                <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
-            </ul>
-
-            <!-- Add to drivile-privacy.html after existing data collection -->
-            
-            <h3>1.5 Advanced Analytics and Tracking</h3>
-            <p>To provide comprehensive driving insights, we also collect:</p>
-            <ul>
-                <li><strong>Firebase Analytics:</strong> App usage patterns, feature adoption, and performance metrics</li>
-                <li><strong>Push Notifications:</strong> Device tokens for friend violation alerts and trip notifications</li>
-                <li><strong>Siri Integration:</strong> Voice command processing and natural language understanding</li>
-                <li><strong>Background Processing:</strong> Continuous location and motion monitoring for auto-trip detection</li>
-                <li><strong>Audio Data:</strong> Sound alert functionality and audio session management</li>
-                <li><strong>Social Interactions:</strong> Friend connections, privacy preferences, and sharing settings</li>
-            </ul>
-            
-            <h3>1.6 Data Export and Sharing</h3>
-            <p>We collect data related to:</p>
-            <ul>
-                <li><strong>PDF Generation:</strong> Trip data compilation for report creation and sharing</li>
-                <li><strong>Social Features:</strong> Friend system data, leaderboards, and privacy controls</li>
-                <li><strong>Third-Party Integrations:</strong> Google Maps routing, TomTom speed limits, and Firebase services</li>
-            </ul>
-            
-            <h2>2. How We Use Your Information</h2>
-            
-            <h3>2.1 Core App Functionality</h3>
-            <p>We use your information to provide and improve our services:</p>
-            <ul>
-                <li>Track and analyze your driving trips and behavior</li>
-                <li>Calculate driving scores and safety metrics</li>
-                <li>Provide real-time speed limit and stop sign monitoring</li>
-                <li>Generate detailed trip reports and analytics</li>
-                <li>Enable social features and friend connections</li>
-            </ul>
-
-            <h3>2.2 Service Improvement</h3>
-            <p>We use aggregated, anonymized data to:</p>
-            <ul>
-                <li>Improve app performance and user experience</li>
-                <li>Develop new features and functionality</li>
-                <li>Optimize driving algorithms and safety detection</li>
-                <li>Conduct research and analysis</li>
-            </ul>
-
-            <h3>2.3 Communication</h3>
-            <p>We may use your contact information to:</p>
-            <ul>
-                <li>Send important app updates and notifications</li>
-                <li>Provide customer support and respond to inquiries</li>
-                <li>Send security alerts and account notifications</li>
-                <li>Share product updates and new features (with your consent)</li>
-            </ul>
-
-            <h2>3. Information Sharing and Disclosure</h2>
-            
-            <div class="highlight">
-                <strong>We Do Not Sell Your Data:</strong> Drivile will never sell, rent, or trade your personal information to third parties for marketing purposes.
+            <div class="section">
+                <h2>Quick Summary</h2>
+                <div class="info-box">
+                    <p><strong>What we collect:</strong> Account info, location during trips, motion activity (to detect driving), driving behavior metrics, and anonymized analytics.</p>
+                    <p><strong>Why we collect:</strong> To log trips, provide speed/safety insights, improve features, and support your account.</p>
+                    <p><strong>Your control:</strong> You can change app toggles at any time, update iOS Location and Motion permissions, request data deletion, and opt out of analytics via device settings.</p>
+                </div>
             </div>
 
-            <h3>3.1 With Your Consent</h3>
-            <p>We may share your information in these specific circumstances:</p>
-            <ul>
-                <li><strong>Social Features:</strong> With friends you choose to connect with, based on your privacy settings</li>
-                <li><strong>Data Export:</strong> When you request to download or export your trip data</li>
-                <li><strong>Third-Party Integrations:</strong> With services you explicitly authorize (e.g., Google Maps)</li>
-            </ul>
-
-            <h3>3.2 Service Providers</h3>
-            <p>We work with trusted third-party service providers who help us operate the App:</p>
-            <ul>
-                <li><strong>Cloud Services:</strong> Firebase for data storage and authentication</li>
-                <li><strong>Maps and Navigation:</strong> Google Maps and TomTom for location services</li>
-                <li><strong>Analytics:</strong> Firebase Analytics for app performance insights</li>
-                <li><strong>Payment Processing:</strong> App Store for subscription management</li>
-            </ul>
-
-            <h3>3.3 Legal Requirements</h3>
-            <p>We may disclose your information when required by law or to protect rights and safety:</p>
-            <ul>
-                <li>Comply with legal obligations or court orders</li>
-                <li>Protect our rights, property, or safety</li>
-                <li>Investigate potential violations of our Terms of Use</li>
-                <li>Prevent fraud or security threats</li>
-            </ul>
-
-            <h2>4. Data Security and Protection</h2>
-            
-            <h3>4.1 Security Measures</h3>
-            <p>We implement industry-standard security measures to protect your data:</p>
-            <ul>
-                <li><strong>Encryption:</strong> All data is encrypted in transit and at rest</li>
-                <li><strong>Access Controls:</strong> Strict authentication and authorization protocols</li>
-                <li><strong>Secure Infrastructure:</strong> Cloud-based security with regular security audits</li>
-                <li><strong>Data Minimization:</strong> We only collect data necessary for app functionality</li>
-            </ul>
-
-            <h3>4.2 Data Retention</h3>
-            <p>We retain your data only as long as necessary:</p>
-            <ul>
-                <li><strong>Active Accounts:</strong> Data is retained while your account is active</li>
-                <li><strong>Account Deletion:</strong> Data is permanently deleted within 30 days of account deletion</li>
-                <li><strong>Legal Requirements:</strong> Some data may be retained longer if required by law</li>
-                <li><strong>Backup Data:</strong> Secure backups are maintained for disaster recovery</li>
-            </ul>
-
-            <h2>5. Your Privacy Rights and Choices</h2>
-            
-            <h3>5.1 Access and Control</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li><strong>View Your Data:</strong> Access all personal information we have about you</li>
-                <li><strong>Update Information:</strong> Correct or modify your profile and preferences</li>
-                <li><strong>Delete Data:</strong> Remove specific data or your entire account</li>
-                <li><strong>Data Portability:</strong> Download your data in a standard format</li>
-            </ul>
-
-            <h3>5.2 Privacy Settings</h3>
-            <p>You can control your privacy through app settings:</p>
-            <ul>
-                <li><strong>Location Permissions:</strong> Choose when and how location data is collected</li>
-                <li><strong>Social Sharing:</strong> Control what information is visible to friends</li>
-                <li><strong>Notification Preferences:</strong> Manage what notifications you receive</li>
-                <li><strong>Data Collection:</strong> Opt out of certain analytics and tracking</li>
-            </ul>
-
-            <h3>5.3 Communication Preferences</h3>
-            <p>You can control how we communicate with you:</p>
-            <ul>
-                <li>Unsubscribe from marketing emails</li>
-                <li>Choose notification frequency and types</li>
-                <li>Opt out of certain data processing activities</li>
-                <li>Request changes to your communication preferences</li>
-            </ul>
-
-            <h2>6. Third-Party Services and Integrations</h2>
-            
-            <h3>6.1 Third-Party Services</h3>
-            <p>Drivile integrates with several third-party services to enhance functionality:</p>
-            <ul>
-                <li><strong>Google Maps:</strong> For navigation, routing, and location services</li>
-                <li><strong>TomTom:</strong> For speed limit detection and traffic information</li>
-                <li><strong>Firebase:</strong> For data storage, authentication, and analytics</li>
-                <li><strong>App Store:</strong> For app distribution and subscription management</li>
-            </ul>
-
-            <h3>6.2 Third-Party Privacy Policies</h3>
-            <p>These third-party services have their own privacy policies and data practices. We recommend reviewing their policies to understand how they handle your information.</p>
-
-            <h2>7. Children's Privacy</h2>
-            <p>Drivile is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
-
-            <h2>8. International Data Transfers</h2>
-            <p>Your data may be processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers, including:</p>
-            <ul>
-                <li>Standard contractual clauses for data protection</li>
-                <li>Adequacy decisions by relevant authorities</li>
-                <li>Other appropriate safeguards as required by law</li>
-            </ul>
-
-            <h2>9. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable laws. When we make changes:</p>
-            <ul>
-                <li>We will update the "Last updated" date at the top of this policy</li>
-                <li>We will notify you through the app or email for significant changes</li>
-                <li>Your continued use of the app after changes constitutes acceptance</li>
-                <li>You can review the current policy at any time in the app</li>
-            </ul>
-
-            <h2>10. Data Breach Notification</h2>
-            <p>In the unlikely event of a data breach that affects your personal information, we will:</p>
-            <ul>
-                <li>Notify you within 72 hours of becoming aware of the breach</li>
-                <li>Provide details about what information was affected</li>
-                <li>Explain the steps we're taking to address the breach</li>
-                <li>Offer guidance on steps you can take to protect yourself</li>
-            </ul>
-
-            <h2>11. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
-            
-            <div class="highlight">
-                <strong>Privacy Team:</strong><br>
-                Email: privacy@drivile.com<br>
-                Support: support@drivile.com<br>
-                Response Time: Within 24 hours<br>
-                Hours: Monday - Friday, 9 AM - 6 PM EST
+            <div class="section">
+                <h2>1. Introduction</h2>
+                
+                <p>Welcome to Drivile! This Privacy Policy explains how this app ("we," "us," or "our"), as the Data Controller, collects, uses, and shares information about you when you use our mobile application, Drivile (the "Service").</p>
+                
+                <p>By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
             </div>
 
-            <h3>11.1 Data Protection Officer</h3>
-            <p>For privacy-related inquiries and data subject requests, you can also contact our Data Protection Officer at dpo@drivile.com</p>
+            <div class="section">
+                <h2>2. Information We Collect</h2>
+                
+                <p>We collect several different types of information for various purposes to provide and improve our Service to you. Under regulations like the CCPA, this data falls into specific categories.</p>
 
-            <h2>12. Your Rights Under Data Protection Laws</h2>
-            <p>Depending on your location, you may have additional rights under data protection laws such as GDPR, CCPA, or others:</p>
-            <ul>
-                <li><strong>Right to Erasure:</strong> Request deletion of your personal data</li>
-                <li><strong>Right to Rectification:</strong> Correct inaccurate personal data</li>
-                <li><strong>Right to Restriction:</strong> Limit how we process your data</li>
-                <li><strong>Right to Object:</strong> Object to certain types of processing</li>
-                <li><strong>Right to Data Portability:</strong> Receive your data in a portable format</li>
-            </ul>
+                <h3>a. Information You Provide Directly:</h3>
+                <div class="data-category">
+                    <ul>
+                        <li><strong>Identifiers:</strong> Such as your name and email address.</li>
+                        <li><strong>Personal Information categories listed in the California Customer Records statute:</strong> Such as your name, address, telephone number, driver's license number, and insurance policy number, should you choose to provide them.</li>
+                        <li><strong>Account Credentials:</strong> Your password for the Service is managed by Firebase Authentication. We do not have direct access to your plain-text password.</li>
+                    </ul>
+                </div>
 
-            <h2>13. Acknowledgment and Consent</h2>
-            <p>By using Drivile, you acknowledge that you have read and understood this Privacy Policy. You consent to the collection, use, and disclosure of your information as described in this policy.</p>
-            
-            <div class="highlight">
-                <strong>Your Privacy is Our Priority:</strong> We are committed to protecting your data and providing you with full control over your privacy. If you have any concerns or questions, please don't hesitate to contact us.
+                <h3>b. Information Collected Automatically When You Use the Service:</h3>
+                <div class="data-category">
+                    <ul>
+                        <li><strong>Geolocation Data:</strong> Precise GPS location, speed, and heading during active trips.</li>
+                        <li><strong>Sensory Data:</strong> With your permission, we access data from your device's motion and fitness sensors to automatically detect driving activity.</li>
+                        <li><strong>Commercial Information:</strong> Records of services purchased, such as your Drivile Pro subscription history, managed via Apple's In-App Purchase system.</li>
+                        <li><strong>Inferences:</strong> We generate inferences from the data above, such as your calculated driving score and driving style (e.g., "smooth," "aggressive").</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="footer">
-            <div class="footer-links">
+            <div class="section">
+                <h2>3. How and Why We Use Your Information (Lawful Basis)</h2>
+                
+                <p>Under GDPR, we must have a "lawful basis" for processing your data. We use your information for the following purposes based on the corresponding legal grounds:</p>
+
+                <h3>To Provide Our Service (Based on Contractual Necessity):</h3>
+                <p>We process your data to fulfill our contract with you, which is our Terms of Use. This includes:</p>
+                <ul>
+                    <li>Operating and maintaining the Service.</li>
+                    <li>Logging your trips, calculating your driving score, and identifying driving events.</li>
+                    <li>Displaying your trip history and statistics to you.</li>
+                    <li>Enabling social features with friends you have approved.</li>
+                </ul>
+
+                <h3>For Business Improvement (Based on our Legitimate Interests):</h3>
+                <p>We have a legitimate interest in improving our Service and keeping it secure. This includes:</p>
+                <ul>
+                    <li>Analyzing usage to understand how our app is used and how to improve it.</li>
+                    <li>Ensuring the security of our app and backend services.</li>
+                </ul>
+
+                <h3>To Comply with Legal Obligations:</h3>
+                <p>We may process your data where it is necessary for compliance with a legal obligation to which we are subject.</p>
+
+                <h3>With Your Explicit Consent (Based on Consent):</h3>
+                <p>We will ask for your consent before:</p>
+                <ul>
+                    <li>Sending you push notifications.</li>
+                    <li>Accessing your device's location and motion activity data (the OS will prompt you for this).</li>
+                </ul>
+                <div class="info-box">
+                    <p><strong>App Store Privacy Labels (Data Linked to You):</strong> Identifiers (email/profile), Location (trip use), Usage Data, and Diagnostics. <strong>Data Not Linked to You:</strong> Aggregated analytics for app improvement.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>4. How We Share Your Information</h2>
+                
+                <ul>
+                    <li><strong>With Your Friends:</strong> Your public profile information and trip data are shared with users you have explicitly approved as friends. You can manage these permissions in the app's settings.</li>
+                    <li><strong>With Service Providers:</strong> We use third-party companies to help us operate our Service. These providers are contractually obligated to protect your data. They include:
+                        <ul>
+                            <li>Google (Firebase): For user authentication, database hosting, and push notifications.</li>
+                            <li>Google Maps Platform, TomTom, OpenStreetMap: For maps and road data (speed limits, etc.).</li>
+                            <li>Apple: For processing In-App Purchases for subscriptions.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="info-box">
+                    <p><strong>Payments:</strong> All subscription billing is processed by Apple via In‑App Purchase. We do not store or process your credit card details on our servers.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. Data Security</h2>
+                
+                <div class="info-box">
+                    <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Location Data and Driving Information</h2>
+                
+                <ul>
+                    <li><strong>Trip Recording:</strong> The Service records your location, speed, and driving behavior during trips. This data is used to calculate driving scores and provide trip analytics.</li>
+                    <li><strong>Background Location:</strong> With your permission, the Service may access location data in the background to detect when you start and stop driving.</li>
+                    <li><strong>Data Accuracy:</strong> Location data accuracy depends on your device's GPS capabilities and environmental factors.</li>
+                    <li><strong>Data Sharing:</strong> Your trip data is only shared with approved friends and is not sold to third parties.</li>
+                </ul>
+
+                <h3>When Location Is Accessed</h3>
+                <ul>
+                    <li><strong>Foreground:</strong> When the app is open, location is used to show your position, speed, and map.</li>
+                    <li><strong>Background (Auto‑Trip Disabled):</strong> Off unless a manual trip is in progress.</li>
+                    <li><strong>Background (Auto‑Trip Enabled):</strong> Motion-gated. Only on while driving; off when stationary.</li>
+                </ul>
+
+                <h3>Location Tracking Scenarios</h3>
+                <div class="scenarios-wrapper">
+                    <table class="scenarios">
+                        <thead>
+                            <tr>
+                                <th>App State</th>
+                                <th>Auto‑Trip</th>
+                                <th>Trip Status</th>
+                                <th>Motion Sensor</th>
+                                <th>Location Tracking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Foreground</td>
+                                <td>Any</td>
+                                <td>Any</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ Always ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Disabled</td>
+                                <td>None</td>
+                                <td>Any</td>
+                                <td><span class="badge-off">❌ OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Disabled</td>
+                                <td>In Progress</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>None</td>
+                                <td>Stationary</td>
+                                <td><span class="badge-off">❌ OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>None</td>
+                                <td>Driving</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>In Progress</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>7. Siri and Voice Commands</h2>
+                
+                <div class="info-box">
+                    <p>The Service integrates with Siri for voice-activated trip control:</p>
+                    <ul>
+                        <li>Voice commands are processed by Apple's Siri service</li>
+                        <li>Voice data is handled according to Apple's privacy policy</li>
+                        <li>You can disable Siri integration in your device settings</li>
+                        <li>Voice commands are only available to Pro subscribers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>8. Analytics and Usage Tracking</h2>
+                
+                <p>We use Firebase Analytics (Google Analytics for Firebase) to collect and analyze usage data to improve our Service. This helps us understand how users interact with our app and make data-driven decisions for improvements.</p>
+                
+                <h3>What Analytics Data We Collect:</h3>
+                <ul>
+                    <li><strong>App Usage Events:</strong> When you start/complete trips, generate reports, change settings, or use specific features</li>
+                    <li><strong>Trip Analytics:</strong> Trip duration, distance, driving scores, and violation patterns (anonymized)</li>
+                    <li><strong>Feature Usage:</strong> Which features you use most, map preferences, PDF generation frequency</li>
+                    <li><strong>Performance Data:</strong> App crashes, error rates, and performance metrics</li>
+                    <li><strong>User Properties:</strong> Subscription type (free/pro), trial status, app version</li>
+                </ul>
+                
+                <h3>How We Use Analytics Data:</h3>
+                <ul>
+                    <li>Improve app performance and fix bugs</li>
+                    <li>Understand user behavior and preferences</li>
+                    <li>Optimize features and user experience</li>
+                    <li>Make business decisions about app development</li>
+                    <li>Monitor app stability and error rates</li>
+                </ul>
+                
+                <h3>Analytics Data Privacy:</h3>
+                <ul>
+                    <li>Analytics data is <strong>anonymized</strong> and does not contain personally identifiable information</li>
+                    <li>We do not track your exact location, personal details, or trip specifics in analytics</li>
+                    <li>Analytics data is processed by Google Firebase and subject to Google's privacy policy</li>
+                    <li>Analytics collection is <strong>disabled in debug mode</strong> to prevent test data from affecting metrics</li>
+                </ul>
+                
+                <h3>Your Analytics Choices:</h3>
+                <div class="info-box">
+                    <p>You can control analytics collection through your device settings. To opt out of analytics:</p>
+                    <ul>
+                        <li>Go to your device's Privacy & Security settings</li>
+                        <li>Find "Analytics & Improvements" or similar</li>
+                        <li>Disable "Share Analytics" or "Share with App Developers"</li>
+                    </ul>
+                    <p>Note: Disabling analytics may limit our ability to improve the app based on usage patterns.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>9. Cookies and Tracking Technologies</h2>
+                
+                <p>Our Service may use cookies and similar tracking technologies to:</p>
+                <ul>
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze app usage and performance</li>
+                    <li>Provide personalized content and features</li>
+                </ul>
+                <p>You can control cookie settings through your device's privacy settings.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Data Breach Notification</h2>
+                
+                <div class="warning-box">
+                    <p>In the event of a data breach that affects your personal information, we will:</p>
+                    <ul>
+                        <li>Notify you within 72 hours of becoming aware of the breach</li>
+                        <li>Provide details about what data was affected</li>
+                        <li>Outline steps we're taking to address the breach</li>
+                        <li>Recommend actions you should take to protect yourself</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>11. Data Retention</h2>
+                
+                <p>We retain your personal information only as long as necessary to provide the Service or as required by law.</p>
+                <ul>
+                    <li><strong>Trip History:</strong> Stored until you delete trips or delete your account.</li>
+                    <li><strong>Account Data:</strong> Retained while the account is active; deleted within 30 days after account deletion.</li>
+                    <li><strong>Backups:</strong> May persist in encrypted backups for up to 90 days before being purged.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>12. Your Data Protection Rights</h2>
+                
+                <p>We are committed to ensuring you have control over your personal data. Depending on your location, you may have the following rights:</p>
+
+                <h3>a. Your Rights under GDPR (for users in the European Economic Area & UK):</h3>
+                <ul>
+                    <li><strong>Right of Access:</strong> You have the right to request copies of your personal data.</li>
+                    <li><strong>Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+                    <li><strong>Right to Erasure (Right to be Forgotten):</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+                    <li><strong>Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+                    <li><strong>Right to Object to Processing:</strong> You have the right to object to our processing of your personal data, under certain conditions.</li>
+                    <li><strong>Right to Data Portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+                </ul>
+
+                <h3>b. Your Rights under CCPA (for California residents):</h3>
+                <ul>
+                    <li><strong>Right to Know:</strong> You have the right to know what personal information we collect, use, and disclose.</li>
+                    <li><strong>Right to Delete:</strong> You have the right to request the deletion of your personal information.</li>
+                    <li><strong>Right to Opt-Out of Sale or Sharing:</strong> We do not "sell" your personal information in the traditional sense of the word. However, the CCPA has a broad definition. We do not share your data with third parties for cross-context behavioral advertising. You can be assured we will not sell or share your data.</li>
+                    <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
+                </ul>
+
+                <h3>c. How to Exercise Your Rights:</h3>
+                <div class="info-box">
+                    <p>To exercise any of these rights, please contact us at our dedicated email: <a href="mailto:support@drivile.com">support@drivile.com</a>. We will respond to your request in accordance with applicable law. We may need to verify your identity before processing your request.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>13. International Data Transfers</h2>
+                
+                <p>Our Service is global and your data may be transferred to, and processed in, countries other than the country in which you are resident. These countries may have data protection laws that are different from the laws of your country. We use third-party services like Google Firebase whose servers may be located in the United States. We take appropriate safeguards to require that your personal information will remain protected in accordance with this Privacy Policy, such as by using Standard Contractual Clauses for data transfers.</p>
+            </div>
+
+            <div class="section">
+                <h2>14. Children's Privacy</h2>
+                
+                <div class="warning-box">
+                    <p>Our Service is not intended for use by children under the age of 16. We do not knowingly collect personally identifiable information from children under 16.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>15. Changes to This Privacy Policy</h2>
+                
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Last Updated" date. For material changes, we will provide in‑app notice or email.</p>
+            </div>
+
+            <div class="section">
+                <h2>16. Contact Us</h2>
+                
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                
+                <div class="info-box">
+                    <strong>Email:</strong> <a href="mailto:support@drivile.com">support@drivile.com</a><br>
+                    <strong>Response Time:</strong> Within 24 hours<br>
+                    <strong>Available:</strong> Monday - Friday, 9 AM - 6 PM EST
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="support.html">← Back to Support</a>
+                &nbsp;•&nbsp;
                 <a href="index.html">Home</a>
-                <a href="support.html">Support</a>
+                &nbsp;•&nbsp;
                 <a href="terms.html">Terms of Use</a>
             </div>
-            <p>&copy; 2025 Drivile. All rights reserved. Your DRIVing profILE.</p>
         </div>
     </div>
 </body>

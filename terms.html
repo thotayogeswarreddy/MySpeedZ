@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use - Drivile</title>
+    <title>Drivile - Terms of Use</title>
     <style>
         * {
             margin: 0;
@@ -11,330 +11,468 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-black: #000000;
+            --pure-white: #ffffff;
+            --accent-green: #00ff88;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --text-gray: #666666;
+            --gradient-primary: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--primary-black);
+            background: var(--pure-white);
             min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            color: var(--pure-white);
+            margin-bottom: 40px;
+            background: var(--gradient-primary);
+            padding: 40px 20px;
+            border-radius: 20px;
         }
 
-        .logo {
+        .header h1 {
             font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .tagline {
+        .header p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+            opacity: 0.9;
         }
+
+        .content {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--primary-black);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 8px;
+        }
+
+        .section h3 {
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: #fff0f0;
+            border: 1px solid #ffd6d6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background: #f0fff7;
+            border: 1px solid #c7ffe6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Location Scenarios Table */
+        .scenarios-wrapper {
+            overflow-x: auto;
+            margin: 16px 0 8px 0;
+        }
+        table.scenarios {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--pure-white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+        }
+        .scenarios th, .scenarios td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            white-space: nowrap;
+        }
+        .scenarios th {
+            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(26,26,26,0.85));
+            color: var(--pure-white);
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .scenarios tr:last-child td { border-bottom: none; }
+        .badge-on { color: var(--primary-black); background: var(--accent-green); padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
+        .badge-off { color: #fff; background: #111; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
+        .scenarios tr:hover td { background: #fafafa; }
 
         .back-link {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 2rem;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            transition: background 0.3s ease;
+            text-align: center;
+            margin-top: 30px;
         }
 
-        .back-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 2rem;
-        }
-
-        .content-card h1 {
+        .back-link a {
             color: #667eea;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .content-card h2 {
-            color: #333;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-
-        .content-card h3 {
-            color: #555;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .content-card ul {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        .content-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight {
-            background: #f0f8ff;
-            padding: 1rem;
-            border-left: 4px solid #667eea;
-            margin: 1rem 0;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 3rem;
-            padding: 2rem 0;
-        }
-
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: white;
             text-decoration: none;
-            margin: 0 1rem;
-            transition: opacity 0.3s ease;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
-        .footer-links a:hover {
-            opacity: 0.8;
+        .back-link a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Drivile</div>
-            <div class="tagline">Your DRIVing profILE</div>
-            <a href="drivile-homepage.html" class="back-link">← Back to Home</a>
+            <h1>Drivile</h1>
+            <p>Terms of Use</p>
         </div>
 
-        <div class="content-card">
-            <h1>Terms of Use</h1>
-            
-            <p><strong>Last updated: December 2024</strong></p>
-            
-            <p>Welcome to Drivile! These Terms of Use ("Terms") govern your use of the Drivile mobile application ("App") and related services. By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>
-
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using Drivile, you confirm that you accept these Terms and agree to comply with them. If you are using the App on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.</p>
-
-            <h2>2. Description of Service</h2>
-            <p>Drivile is a comprehensive driving analytics and trip tracking application designed to help users monitor their driving behavior, track trips, improve driving safety, and connect with other drivers. The App provides features including but not limited to:</p>
-            <ul>
-                <li>Automatic and manual trip tracking</li>
-                <li>Real-time speed limit detection and violation monitoring</li>
-                <li>Stop sign compliance tracking</li>
-                <li>Driving score calculation and analytics</li>
-                <li>Social features for connecting with friends</li>
-                <li>Leaderboards and achievement systems</li>
-                <li>Data export and reporting capabilities</li>
-            </ul>
-
-            <h2>3. User Accounts and Registration</h2>
-            <h3>3.1 Account Creation</h3>
-            <p>To access certain features of the App, you must create an account. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete.</p>
-            
-            <h3>3.2 Account Security</h3>
-            <p>You are responsible for safeguarding the password and any other credentials used to access your account. You agree not to disclose your password to any third party and to take sole responsibility for any activities or actions under your account.</p>
-            
-            <h3>3.3 Account Verification</h3>
-            <p>You must verify your email address to activate your account. Failure to verify your email may result in limited access to App features.</p>
-
-            <h2>4. Acceptable Use</h2>
-            <h3>4.1 Permitted Uses</h3>
-            <p>You may use the App only for lawful purposes and in accordance with these Terms. The App is intended for personal, non-commercial use to improve driving safety and track personal driving habits.</p>
-            
-            <h3>4.2 Prohibited Uses</h3>
-            <p>You agree not to use the App to:</p>
-            <ul>
-                <li>Violate any applicable laws or regulations</li>
-                <li>Infringe upon the rights of others</li>
-                <li>Transmit harmful, offensive, or inappropriate content</li>
-                <li>Attempt to gain unauthorized access to the App or other systems</li>
-                <li>Interfere with or disrupt the App's functionality</li>
-                <li>Use the App while driving in a manner that could be dangerous</li>
-                <li>Share false or misleading driving data</li>
-            </ul>
-
-            <h2>5. Privacy and Data Protection</h2>
-            <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using the App, you consent to the collection and use of information as outlined in our Privacy Policy.</p>
-            
-            <div class="highlight">
-                <strong>Important:</strong> The App collects location data, motion data, and driving behavior information to provide its core functionality. This data is processed in accordance with our Privacy Policy and applicable data protection laws.
+        <div class="content">
+            <div class="last-updated">
+                Last Updated: August 21, 2025
             </div>
 
-            <h2>6. Subscription and Payment Terms</h2>
-            <h3>6.1 Subscription Plans</h3>
-            <p>Drivile offers both free and premium subscription plans. Premium features require an active subscription, which may be offered on a monthly or annual basis.</p>
-            
-            <h3>6.2 Payment Processing</h3>
-            <p>All subscription payments are processed through the App Store and are subject to App Store terms and conditions. You authorize us to charge your App Store account for any applicable fees.</p>
-            
-            <h3>6.3 Subscription Management</h3>
-            <p>You may manage your subscription through your App Store account settings. Cancellation will take effect at the end of the current billing period. No refunds are provided for partial billing periods.</p>
-            
-            <h3>6.4 Price Changes</h3>
-            <p>We reserve the right to modify subscription prices. Price changes will be communicated in advance and will take effect at the next billing cycle.</p>
-
-            <!-- Add to drivile-terms.html after subscription terms -->
-
-            <h3>6.5 Free Trial Terms</h3>
-            <p>Drivile offers a 7-day free trial of Pro features:</p>
-            <ul>
-                <li>Trial automatically converts to paid subscription unless cancelled</li>
-                <li>You may cancel anytime during the trial period</li>
-                <li>Trial provides access to all Pro features without limitations</li>
-                <li>No credit card required for trial activation</li>
-            </ul>
-            
-            <h3>6.6 Subscription Cancellation</h3>
-            <p>To cancel your subscription:</p>
-            <ul>
-                <li>Go to App Store → Account → Subscriptions → Drivile</li>
-                <li>Select "Cancel Subscription"</li>
-                <li>Cancellation takes effect at the end of the current billing period</li>
-                <li>No refunds for partial billing periods</li>
-            </ul>
-            
-            <h3>6.7 Background Processing and Continuous Monitoring</h3>
-            <p>By using Drivile, you consent to:</p>
-            <ul>
-                <li>Continuous background location monitoring for auto-trip detection</li>
-                <li>Motion sensor data collection for driving behavior analysis</li>
-                <li>Background app refresh for real-time safety monitoring</li>
-                <li>Push notifications for important alerts and updates</li>
-            </ul>
-            
-            <h3>6.8 Siri Integration and Voice Commands</h3>
-            <p>Drivile integrates with Siri for hands-free operation:</p>
-            <ul>
-                <li>Voice commands are processed by Apple's Siri service</li>
-                <li>Voice data may be processed by Apple and shared with Drivile</li>
-                <li>You can disable Siri integration in app settings</li>
-                <li>Siri commands require Pro subscription</li>
-            </ul>
-            
-            <h2>7. Intellectual Property Rights</h2>
-            <h3>7.1 App Ownership</h3>
-            <p>The App and its original content, features, and functionality are owned by Drivile and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
-            
-            <h3>7.2 User Content</h3>
-            <p>You retain ownership of any content you create or upload to the App. By using the App, you grant us a limited license to use, store, and display your content solely for the purpose of providing the App's services.</p>
-            
-            <h3>7.3 License to Use</h3>
-            <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial use.</p>
-
-            <h2>8. User-Generated Content</h2>
-            <h3>8.1 Content Standards</h3>
-            <p>When sharing content through the App's social features, you agree to:</p>
-            <ul>
-                <li>Share only accurate and truthful information</li>
-                <li>Respect the privacy and rights of others</li>
-                <li>Not share content that is harmful, offensive, or inappropriate</li>
-                <li>Comply with all applicable laws and regulations</li>
-            </ul>
-            
-            <h3>8.2 Content Moderation</h3>
-            <p>We reserve the right to remove or modify any user-generated content that violates these Terms or is otherwise objectionable.</p>
-
-            <h2>9. Termination and Account Deletion</h2>
-            <h3>9.1 Termination by User</h3>
-            <p>You may terminate your account at any time by deleting the App or contacting our support team. Upon termination, your access to the App will cease immediately.</p>
-            
-            <h3>9.2 Termination by Us</h3>
-            <p>We may terminate or suspend your access to the App at any time, with or without cause, with or without notice. Grounds for termination include violation of these Terms, fraudulent activity, or extended periods of inactivity.</p>
-            
-            <h3>9.3 Effect of Termination</h3>
-            <p>Upon termination, your right to use the App ceases immediately. We may delete your account and associated data, subject to our data retention policies and applicable law.</p>
-
-            <h2>10. Disclaimers and Limitations</h2>
-            <h3>10.1 Service Availability</h3>
-            <p>The App is provided "as is" and "as available" without warranties of any kind. We do not guarantee that the App will be available at all times or that it will be error-free or uninterrupted.</p>
-            
-            <h3>10.2 Driving Safety Disclaimer</h3>
-            <p>Drivile is designed to assist with driving improvement but is not a substitute for safe driving practices. Users remain responsible for their driving behavior and compliance with all traffic laws and regulations.</p>
-            
-            <h3>10.3 Data Accuracy</h3>
-            <p>While we strive for accuracy, driving data and analytics provided by the App may not be 100% accurate due to factors such as GPS signal quality, device limitations, and environmental conditions.</p>
-
-            <h2>11. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, Drivile shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising out of or relating to your use of the App.</p>
-            
-            <div class="highlight">
-                <strong>Important:</strong> Our total liability to you for any claims arising from these Terms or your use of the App shall not exceed the amount you paid for the App in the twelve months preceding the claim.
+            <div class="section">
+                <p>Please read these Terms of Use ("Terms," "Terms of Use") carefully before using the Drivile mobile application (the "Service").</p>
+                
+                <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service. By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
             </div>
 
-            <h2>12. Indemnification</h2>
-            <p>You agree to indemnify, defend, and hold harmless Drivile and its officers, directors, employees, and agents from and against any claims, damages, losses, and expenses arising out of or relating to your use of the App or violation of these Terms.</p>
+            <div class="section">
+                <h2>1. CRITICAL SAFETY DISCLAIMER</h2>
+                
+                <div class="warning-box">
+                    <strong>Your safety is your own responsibility.</strong> The Drivile application is an informational tool and driving aid; it is not a safety device.
+                </div>
 
-            <h2>13. Governing Law and Dispute Resolution</h2>
-            <h3>13.1 Governing Law</h3>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Drivile operates, without regard to its conflict of law provisions.</p>
-            
-            <h3>13.2 Dispute Resolution</h3>
-            <p>Any disputes arising from these Terms or your use of the App shall be resolved through good faith negotiation. If such negotiation fails, disputes may be resolved through binding arbitration or in the appropriate courts of jurisdiction.</p>
+                <ul>
+                    <li><strong>No Substitute for Safe Driving:</strong> The Service is not a substitute for your full attention, judgment, and adherence to safe driving practices. The single most important factor for driving safety is an attentive driver. Always pay full attention to the road and obey all traffic laws and regulations.</li>
+                    
+                    <li><strong>Data Accuracy Not Guaranteed:</strong> Information provided by the Service, including but not limited to speed limits, stop sign locations, road conditions, and driving analysis, is sourced from third-party providers and is provided "as is." This data may be inaccurate, incomplete, or outdated. Do not rely solely on the Service for driving decisions. You are solely responsible for the safe operation of your vehicle.</li>
+                    
+                    <li><strong>Hands-Free Operation:</strong> It is dangerous and illegal in many places to interact with a mobile device while driving. You agree to use the Service in a safe and legal manner, including using hands-free features like Siri where available and appropriate.</li>
+                </ul>
 
-            <h2>14. Changes to Terms</h2>
-            <p>We reserve the right to modify these Terms at any time. When we make changes, we will update the "Last updated" date at the top of these Terms and notify users through the App or email. Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
-            
-            <div class="highlight">
-                <strong>Important:</strong> If you do not agree to the modified Terms, you must stop using the App and delete your account.
+                <p>By using this Service, you acknowledge and agree that the developer of the app is not liable for any traffic accidents, violations, fines, or damages that may occur during your use of the app.</p>
             </div>
 
-            <h2>15. Severability</h2>
-            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
-
-            <h2>16. Entire Agreement</h2>
-            <p>These Terms, together with our Privacy Policy and any other policies referenced herein, constitute the entire agreement between you and Drivile regarding your use of the App and supersede all prior agreements and understandings.</p>
-
-            <h2>17. Contact Information</h2>
-            <p>If you have any questions about these Terms of Use, please contact us:</p>
-            <ul>
-                <li><strong>Email:</strong> legal@drivile.com</li>
-                <li><strong>Support:</strong> support@drivile.com</li>
-                <li><strong>Response Time:</strong> Within 48 hours</li>
-            </ul>
-
-            <h2>18. Acknowledgment</h2>
-            <p>By using Drivile, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. If you do not agree to these Terms, please do not use the App.</p>
-        </div>
-
-        <div class="footer">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy Policy</a>
+            <div class="section">
+                <h2>2. The Service</h2>
+                
+                <p>Drivile provides GPS-based trip logging, driving behavior analysis, and social features to help you understand and improve your driving habits. Features may include manual and automatic trip recording, driving score calculation, speed violation detection, and the ability to connect with friends.</p>
             </div>
-            <p>&copy; 2025 Drivile. All rights reserved. Your DRIVing profILE.</p>
+
+            <div class="section">
+                <h2>3. Subscriptions and Payments</h2>
+                
+                <p>Certain parts of the Service are billed on a subscription basis ("Subscription(s)").</p>
+                
+                <ul>
+                    <li><strong>Billing and Payments:</strong> Subscriptions are managed and billed through Apple's In-App Purchase system, and your purchase will be subject to Apple's applicable payment policies. Payment will be charged to your Apple ID account at the confirmation of purchase.</li>
+                    
+                    <li><strong>Auto-Renewal:</strong> All subscriptions automatically renew unless you cancel them at least 24 hours before the end of the current subscription period. You can manage and cancel your subscriptions by going to your App Store account settings after purchase.</li>
+                    
+                    <li><strong>Free Trials:</strong> We may, at our sole discretion, offer a Subscription with a free trial for a limited period. If you do not cancel before the end of the free trial, you will be automatically charged the subscription price.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. User Accounts</h2>
+                
+                <p>To use the Service, you must register for an account. You agree to provide accurate and complete information. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree to notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Data Usage and Storage</h2>
+                
+                <ul>
+                    <li><strong>Data Collection:</strong> By using the Service, you consent to the collection, processing, and storage of your location data, driving behavior, and trip information as described in our Privacy Policy.</li>
+                    
+                    <li><strong>Analytics Consent:</strong> You consent to the collection and analysis of anonymous usage data through Firebase Analytics to improve our Service. This includes app usage patterns, feature preferences, and performance metrics.</li>
+                    
+                    <li><strong>Data Ownership:</strong> You retain ownership of your personal data. We process this data to provide the Service and improve our features.</li>
+                    
+                    <li><strong>Data Deletion:</strong> You may request deletion of your data at any time by contacting us. Deletion may result in loss of access to certain features.</li>
+                    
+                    <li><strong>Backup and Recovery:</strong> We implement reasonable data backup and recovery procedures, but we cannot guarantee against data loss.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5A. Location Access and Permissions</h2>
+                
+                <p>Drivile relies on location services and motion activity to provide core functionality such as auto-trip detection, trip logging, speed monitoring, and navigation-related features. We follow platform guidelines and respect your choices. The following explains when and why we access these signals:</p>
+                
+                <h3>Foreground Usage (When App Is Open)</h3>
+                <ul>
+                    <li><strong>When In Use Access:</strong> While the app is in the foreground, we access your location to display your current position, render maps, show speed and speed limits, and enable navigation-related capabilities.</li>
+                    <li><strong>No Continuous Background Requirement:</strong> Foreground usage does not imply background tracking. If you close/minimize the app and have not enabled auto-trip tracking, continuous location updates stop.</li>
+                </ul>
+                
+                <h3>Background Usage (When App Is Closed or In Background)</h3>
+                <ul>
+                    <li><strong>Conditional Background Tracking:</strong> Background location access occurs only when <em>Auto Trip Tracking</em> is enabled and motion activity indicates that you are driving, or when a manual trip is actively in progress.</li>
+                    <li><strong>Motion-Gated:</strong> We use motion signals (e.g., automotive vs. stationary) to start/stop background tracking. If you are stationary, background tracking is paused.</li>
+                    <li><strong>Trip Boundaries:</strong> Background tracking stops automatically when the trip ends (detected via motion/activity signals or when you manually end a trip).</li>
+                </ul>
+                
+                <h3>Motion & Fitness Permissions</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Motion activity (e.g., automotive vs. stationary) helps detect when to start/stop auto trips without requiring constant location polling.</li>
+                    <li><strong>User Control:</strong> You can disable motion access in system settings. If disabled, auto-trip detection may not function as intended.</li>
+                </ul>
+                
+                <h3>User Controls and Transparency</h3>
+                <ul>
+                    <li><strong>Toggles in App:</strong> You can enable/disable <em>Auto Trip Tracking</em>, <em>Sound Alerts</em>, <em>Friend Alerts</em>, <em>Use Google Maps UI</em>, and other features. Changes take effect in real time.</li>
+                    <li><strong>System Settings:</strong> You can change Location (Never / Ask Next Time / While Using / Always) and Motion & Fitness permissions at any time in iOS Settings.</li>
+                    <li><strong>Granular Logging:</strong> The app logs toggle changes and subscription context to improve user support and transparency (no sale of personal data).</li>
+                </ul>
+                
+                <h3>Data Handling, Retention, and Deletion</h3>
+                <ul>
+                    <li><strong>Trip Data:</strong> Trip start/end, route traces, speeds, and aggregate metrics are stored to power analytics and history views.</li>
+                    <li><strong>Retention:</strong> We retain data for as long as your account remains active or as needed to provide the Service, unless you request deletion earlier.</li>
+                    <li><strong>Deletion:</strong> You may request deletion of your account and associated data through support. Deletion removes historical trip and related personal data from active systems, subject to backup and legal requirements.</li>
+                </ul>
+                
+                <h3>Consent and Revocation</h3>
+                <ul>
+                    <li><strong>Consent:</strong> By enabling location permissions and app toggles, you consent to the described access patterns.</li>
+                    <li><strong>Revocation:</strong> You can revoke permissions in iOS Settings at any time. Certain features may degrade or stop working when permissions are revoked.</li>
+                </ul>
+                
+                <h3>Location Tracking Scenarios</h3>
+                <div class="info-box">
+                    <p><strong>Summary:</strong> The app tracks location based on a combination of app state, auto-trip setting, motion activity, and trip status. The following table provides a concise overview.</p>
+                </div>
+                <div class="scenarios-wrapper">
+                    <table class="scenarios">
+                        <thead>
+                            <tr>
+                                <th>App State</th>
+                                <th>Auto‑Trip</th>
+                                <th>Trip Status</th>
+                                <th>Motion Sensor</th>
+                                <th>Location Tracking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Foreground</td>
+                                <td>Any</td>
+                                <td>Any</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ Always ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Disabled</td>
+                                <td>None</td>
+                                <td>Any</td>
+                                <td><span class="badge-off">❌ OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Disabled</td>
+                                <td>In Progress</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>None</td>
+                                <td>Stationary</td>
+                                <td><span class="badge-off">❌ OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>None</td>
+                                <td>Driving</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                            <tr>
+                                <td>Background</td>
+                                <td>Enabled</td>
+                                <td>In Progress</td>
+                                <td>Any</td>
+                                <td><span class="badge-on">✅ ON</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Third-Party Services</h2>
+                
+                <p>The Service integrates with third-party services including:</p>
+                
+                <ul>
+                    <li>Apple Maps and Google Maps for navigation and location services</li>
+                    <li>TomTom and OpenStreetMap for road data and speed limits</li>
+                    <li>Firebase for authentication, data storage, and analytics</li>
+                    <li>Apple's In-App Purchase system for subscriptions</li>
+                </ul>
+                
+                <p>These services have their own terms of service and privacy policies. We are not responsible for the content, privacy practices, or availability of these third-party services.</p>
+                
+                <div class="info-box">
+                    <p><strong>Analytics Services:</strong> We use Google Firebase Analytics to collect anonymous usage data. This data helps us improve the app and is processed according to Google's privacy policy. You can opt out of analytics collection through your device settings.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>7. Prohibited Uses</h2>
+                
+                <p>You agree not to use the Service to:</p>
+                
+                <ul>
+                    <li>Violate any applicable laws or regulations</li>
+                    <li>Harass, abuse, or harm other users</li>
+                    <li>Attempt to reverse engineer or hack the Service</li>
+                    <li>Use the Service for commercial purposes without authorization</li>
+                    <li>Share your account credentials with others</li>
+                    <li>Use the Service while operating heavy machinery or in dangerous conditions</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. Intellectual Property</h2>
+                
+                <p>The Service and its original content (excluding data provided by you or other users), features, and functionality are and will remain the exclusive property of the app developer and its licensors. You retain all ownership rights to the personal data you generate through your use of the Service.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Termination</h2>
+                
+                <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, at our sole discretion, for any reason whatsoever, including without limitation if you breach these Terms.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Disclaimer of Warranties</h2>
+                
+                <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.</p>
+            </div>
+
+            <div class="section">
+                <h2>11. Limitation of Liability</h2>
+                
+                <p>In no event shall the developer of the app, nor its advisors, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Force Majeure</h2>
+                
+                <p>We shall not be liable for any failure to perform our obligations under these Terms where such failure is a result of circumstances beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, fire, labor disputes, or government actions.</p>
+            </div>
+
+            <div class="section">
+                <h2>13. Governing Law</h2>
+                
+                <p>These Terms shall be governed and construed in accordance with the laws of United States of America, without regard to its conflict of law provisions.</p>
+            </div>
+
+            <div class="section">
+                <h2>14. Dispute Resolution</h2>
+                
+                <p>Any disputes arising from these Terms or your use of the Service shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. You waive your right to a jury trial or class action lawsuit.</p>
+            </div>
+
+            <div class="section">
+                <h2>15. Severability</h2>
+                
+                <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+            </div>
+
+            <div class="section">
+                <h2>16. Changes to These Terms</h2>
+                
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+            </div>
+
+            <div class="section">
+                <h2>17. Contact Us</h2>
+                
+                <p>If you have any questions about these Terms, please contact us at:</p>
+                
+                <div class="info-box">
+                    <strong>Email:</strong> <a href="support@drivile.com">support@drivile.com</a><br>
+                    <strong>Response Time:</strong> Within 24 hours<br>
+                    <strong>Available:</strong> Monday - Friday, 9 AM - 6 PM EST
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="support.html">← Back to Support</a>
+            </div>
         </div>
     </div>
 </body>

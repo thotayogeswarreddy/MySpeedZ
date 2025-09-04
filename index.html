@@ -735,6 +735,43 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+        // Phone screenshot slideshow with delay and subtle tilt
+        (function initPhoneSlideshow(){
+          const container = document.getElementById('phoneSlideshow');
+          if (!container) return;
+          const slides = Array.from(container.querySelectorAll('img'));
+          if (slides.length === 0) return;
+        
+          let idx = 0;
+          const DURATION_MS = 2800;
+        
+          // ensure only first is active initially
+          slides.forEach((img, i) => img.classList.toggle('active', i === 0));
+        
+          const advance = () => {
+            const current = slides[idx];
+            const nextIdx = (idx + 1) % slides.length;
+            const next = slides[nextIdx];
+        
+            // prepare tilt
+            next.classList.add('next-tilt');
+            current.classList.add('prev-tilt');
+        
+            // swap visibility
+            current.classList.remove('active');
+            requestAnimationFrame(() => {
+              next.classList.add('active');
+              // cleanup tilt classes after transition
+              setTimeout(() => {
+                slides.forEach(s => s.classList.remove('next-tilt','prev-tilt'));
+              }, 800);
+            });
+        
+            idx = nextIdx;
+          };
+        
+          setInterval(advance, DURATION_MS);
+        })();
     </script>
 </body>
 </html>

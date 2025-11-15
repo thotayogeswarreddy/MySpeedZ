@@ -192,11 +192,12 @@
 
             <div class="section">
                 <h2>Quick Summary</h2>
-                <div class="info-box">
-                    <p><strong>What we collect:</strong> Account info, location during trips, motion activity (to detect driving), driving behavior metrics, and anonymized analytics.</p>
-                    <p><strong>Why we collect:</strong> To log trips, provide speed/safety insights, improve features, and support your account.</p>
-                    <p><strong>Your control:</strong> You can change app toggles at any time, update iOS Location and Motion permissions, request data deletion, and opt out of analytics via device settings.</p>
-                </div>
+            <div class="info-box">
+    <p><strong>What we collect:</strong> Account info, location during trips, motion activity (to detect driving), driving behavior metrics, profile photos (if you choose to set one), crash reports and diagnostics, and anonymized analytics.</p>
+    <p><strong>Why we collect:</strong> To log trips, provide speed/safety insights, improve features, ensure app stability, and support your account.</p>
+    <p><strong>Third-party data sharing:</strong> Location coordinates are sent to TomTom for speed limit queries. Crash reports are sent to Firebase for app improvement. All data sharing is done securely and according to our partners' privacy policies.</p>
+    <p><strong>Your control:</strong> You can change app toggles at any time, update iOS Location and Motion permissions, request data deletion, export your data, and opt out of analytics via device settings.</p>
+</div>
             </div>
 
             <div class="section">
@@ -228,6 +229,8 @@
                         <li><strong>Sensory Data:</strong> With your permission, we access data from your device's motion and fitness sensors to automatically detect driving activity.</li>
                         <li><strong>Commercial Information:</strong> Records of services purchased, such as your Drivile Pro subscription history, managed via Apple's In-App Purchase system.</li>
                         <li><strong>Inferences:</strong> We generate inferences from the data above, such as your calculated driving score and driving style (e.g., "smooth," "aggressive").</li>
+                        <li><strong>Photo Library Access:</strong> If you choose to set a profile photo, we access your photo library with your explicit permission. Photos are uploaded to Firebase Storage and associated with your account. We do not access your photo library except when you explicitly choose to change your profile photo.</li>
+                        <li><strong>Crash Reports and Diagnostics:</strong> To help us improve app stability and performance, we collect crash reports and diagnostic information through Firebase Analytics. This includes app crash logs, error messages, device information (model, OS version), app version, and performance metrics (app launch time, memory usage). This data is anonymized and does not include personal information or location data.</li>
                     </ul>
                 </div>
             </div>
@@ -262,6 +265,15 @@
                     <li>Sending you push notifications.</li>
                     <li>Accessing your device's location and motion activity data (the OS will prompt you for this).</li>
                 </ul>
+                <h3>Automated Decision-Making:</h3>
+<p>We use automated algorithms to calculate your driving score based on your driving behavior (speed violations, harsh braking, acceleration, etc.). This scoring is used solely to provide you with driving insights and help you improve your driving habits. This automated processing:</p>
+<ul>
+    <li>Is not used for any automated decision-making that has legal or similarly significant effects</li>
+    <li>Does not result in automated profiling that produces legal effects</li>
+    <li>Is based on your explicit consent when you use the Service</li>
+    <li>Can be reviewed and corrected by you at any time</li>
+</ul>
+<p>You have the right to request human review of any automated decisions by contacting us at <a href="mailto:support@drivile.com">support@drivile.com</a>.</p>
                 <div class="info-box">
                     <p><strong>App Store Privacy Labels (Data Linked to You):</strong> Identifiers (email/profile), Location (trip use), Usage Data, and Diagnostics. <strong>Data Not Linked to You:</strong> Aggregated analytics for app improvement.</p>
                 </div>
@@ -274,9 +286,10 @@
                     <li><strong>With Your Friends:</strong> Your public profile information and trip data are shared with users you have explicitly approved as friends. You can manage these permissions in the app's settings.</li>
                     <li><strong>With Service Providers:</strong> We use third-party companies to help us operate our Service. These providers are contractually obligated to protect your data. They include:
                         <ul>
-                            <li>Google (Firebase): For user authentication, database hosting, and push notifications.</li>
-                            <li>Google Maps Platform, TomTom, OpenStreetMap: For maps and road data (speed limits, etc.).</li>
-                            <li>Apple: For processing In-App Purchases for subscriptions.</li>
+                            <li><strong>Google (Firebase):</strong> For user authentication, database hosting, push notifications, analytics, and crash reporting. Firebase's privacy policy can be found at <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a>.</li>
+                            <li><strong>Google Maps Platform:</strong> For map display and route data. Google Maps privacy policy can be found at <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</li>
+                            <li><strong>TomTom:</strong> For speed limit monitoring, we send your current location coordinates (latitude, longitude, and heading/direction) to TomTom's API servers to retrieve speed limit information for your current road segment. This data is transmitted securely over HTTPS connections. TomTom processes this location data according to their privacy policy, which can be found at <a href="https://www.tomtom.com/privacy/" target="_blank">https://www.tomtom.com/privacy/</a>. We do not share your personal identity, trip history, or any other personal information with TomTom - only anonymous location coordinates during active API calls when you are using the speed limit monitoring feature.</li>
+                            <li><strong>Apple:</strong> For processing In-App Purchases for subscriptions. Apple's privacy policy can be found at <a href="https://www.apple.com/privacy/" target="_blank">https://www.apple.com/privacy/</a>.</li>
                         </ul>
                     </li>
                 </ul>
@@ -302,6 +315,9 @@
                     <li><strong>Data Accuracy:</strong> Location data accuracy depends on your device's GPS capabilities and environmental factors.</li>
                     <li><strong>Data Sharing:</strong> Your trip data is only shared with approved friends and is not sold to third parties.</li>
                 </ul>
+                <div class="info-box">
+    <p><strong>Third-Party Location Processing:</strong> When you use the speed limit monitoring feature, your location coordinates (latitude, longitude, and heading) are sent to TomTom's API servers to retrieve speed limit information. This processing happens in real-time during active trips and is necessary to provide you with accurate speed limit information. TomTom processes this location data according to their privacy policy. We do not share your personal identity, trip history, or any other personal information with TomTom - only anonymous location coordinates during active API calls.</p>
+</div>
 
                 <h3>When Location Is Accessed</h3>
                 <ul>
@@ -414,6 +430,13 @@
                     <li>Analytics data is processed by Google Firebase and subject to Google's privacy policy</li>
                     <li>Analytics collection is <strong>disabled in debug mode</strong> to prevent test data from affecting metrics</li>
                 </ul>
+                <h3>Crash Reports and Diagnostics:</h3>
+<ul>
+    <li><strong>What We Collect:</strong> App crash logs, error messages, device information (model, OS version), app version, and performance metrics (app launch time, memory usage, network performance)</li>
+    <li><strong>Why We Collect:</strong> To identify and fix app issues, improve app stability, and optimize performance</li>
+    <li><strong>Privacy:</strong> Crash reports are anonymized and do not include personal information, location data, or trip details. Only technical information necessary for debugging is collected.</li>
+    <li><strong>Your Control:</strong> You can disable crash reporting through your device's Privacy & Security settings under "Analytics & Improvements"</li>
+</ul>
                 
                 <h3>Your Analytics Choices:</h3>
                 <div class="info-box">
@@ -426,9 +449,39 @@
                     <p>Note: Disabling analytics may limit our ability to improve the app based on usage patterns.</p>
                 </div>
             </div>
-
+<div class="section">
+    <h2>9. Data Minimization and Processing Principles</h2>
+    
+    <p>We are committed to processing your personal data in accordance with data protection principles:</p>
+    
+    <h3>Data Minimization:</h3>
+    <ul>
+        <li>We only collect the minimum amount of data necessary to provide our Service</li>
+        <li>Location data is only collected during active trips, not when the app is idle</li>
+        <li>Motion data is only accessed when auto-trip detection is enabled by you</li>
+        <li>Analytics data is anonymized and aggregated to prevent identification of individuals</li>
+        <li>We do not collect data for purposes beyond what is disclosed in this policy</li>
+    </ul>
+    
+    <h3>Purpose Limitation:</h3>
+    <ul>
+        <li>We only use your data for the purposes stated in this Privacy Policy</li>
+        <li>We do not use your data for purposes incompatible with the original purpose of collection</li>
+        <li>We do not sell your personal data to third parties</li>
+    </ul>
+    
+    <h3>Storage Limitation:</h3>
+    <ul>
+        <li>We retain your data only for as long as necessary to provide the Service</li>
+        <li>Trip data is deleted when you delete trips or your account</li>
+        <li>Account data is deleted within 30 days after account deletion</li>
+        <li>Backups are purged within 90 days</li>
+    </ul>
+</div>
+            
+            
             <div class="section">
-                <h2>9. Cookies and Tracking Technologies</h2>
+                <h2>10. Cookies and Tracking Technologies</h2>
                 
                 <p>Our Service may use cookies and similar tracking technologies to:</p>
                 <ul>
@@ -440,7 +493,7 @@
             </div>
 
             <div class="section">
-                <h2>10. Data Breach Notification</h2>
+                <h2>11. Data Breach Notification</h2>
                 
                 <div class="warning-box">
                     <p>In the event of a data breach that affects your personal information, we will:</p>
@@ -454,7 +507,7 @@
             </div>
 
             <div class="section">
-                <h2>11. Data Retention</h2>
+                <h2>12. Data Retention</h2>
                 
                 <p>We retain your personal information only as long as necessary to provide the Service or as required by law.</p>
                 <ul>
@@ -465,7 +518,7 @@
             </div>
 
             <div class="section">
-                <h2>12. Your Data Protection Rights</h2>
+                <h2>13. Your Data Protection Rights</h2>
                 
                 <p>We are committed to ensuring you have control over your personal data. Depending on your location, you may have the following rights:</p>
 
@@ -491,16 +544,32 @@
                 <div class="info-box">
                     <p>To exercise any of these rights, please contact us at our dedicated email: <a href="mailto:support@drivile.com">support@drivile.com</a>. We will respond to your request in accordance with applicable law. We may need to verify your identity before processing your request.</p>
                 </div>
+                <h3>d. Right to Data Portability (Data Export):</h3>
+            <p>You have the right to receive a copy of your personal data in a structured, commonly used, and machine-readable format. To request a copy of your data:</p>
+            <ul>
+                <li>Contact us at <a href="mailto:support@drivile.com">support@drivile.com</a> with the subject "Data Export Request"</li>
+                <li>We will provide your data in JSON format within 30 days of your request</li>
+                <li>Your exported data will include:
+                    <ul>
+                        <li>Account information (name, email, profile photo)</li>
+                        <li>Trip history and details (locations, speeds, violations, timestamps)</li>
+                        <li>Driving scores and statistics</li>
+                        <li>Friend connections</li>
+                        <li>App settings and preferences</li>
+                    </ul>
+                </li>
+            </ul>
             </div>
+            
 
             <div class="section">
-                <h2>13. International Data Transfers</h2>
+                <h2>14. International Data Transfers</h2>
                 
                 <p>Our Service is global and your data may be transferred to, and processed in, countries other than the country in which you are resident. These countries may have data protection laws that are different from the laws of your country. We use third-party services like Google Firebase whose servers may be located in the United States. We take appropriate safeguards to require that your personal information will remain protected in accordance with this Privacy Policy, such as by using Standard Contractual Clauses for data transfers.</p>
             </div>
 
             <div class="section">
-                <h2>14. Children's Privacy</h2>
+                <h2>15. Children's Privacy</h2>
                 
                 <div class="warning-box">
                     <p>Our Service is not intended for use by children under the age of 16. We do not knowingly collect personally identifiable information from children under 16.</p>
@@ -508,13 +577,13 @@
             </div>
 
             <div class="section">
-                <h2>15. Changes to This Privacy Policy</h2>
+                <h2>16. Changes to This Privacy Policy</h2>
                 
                 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Last Updated" date. For material changes, we will provide in‑app notice or email.</p>
             </div>
 
             <div class="section">
-                <h2>16. Contact Us</h2>
+                <h2>17. Contact Us</h2>
                 
                 <p>If you have any questions about this Privacy Policy, please contact us:</p>
                 
